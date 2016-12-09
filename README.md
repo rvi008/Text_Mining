@@ -22,3 +22,17 @@ The negative/positive classification was done this way :
 * "Normalize" all this different gradings system applying "business" rules like in four stars system 2 stars or below is negative and 3 stars and above is positive and so on
 * As it's difficult to capture half points grading (because there are many ways to specify it, for example : 1/2, 0.5, half) there are occasional losses but this isn't significant, a "neutral" review might be classified as negative which is reasonable. 
 
+## Third question
+### Implementation of the NB class and it's Train / Predict functions
+<p align="justify">
+We choose to redeclare the count_words function into the NB class.
+The TrainMultinomialNB function was implemented this way : 
+</p>
+* Start with the collection of counts matrix from the training corpus using the count_word function
+* Compute the prior probabilities e.g the frequencies of positive / negative documents over the whole corpus
+* Compute for each word the conditional probability of belonging to a class
+* Return a dict containing for each class the conditional probabilities
+
+The ApplyMultinomialNB was implemented this way :
+* Extract all the words from the test set and keep only those already in vocabulary
+* Predict the class for each document in the test set according to the prior distribution and the class associated to each term contained in the document 
