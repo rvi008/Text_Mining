@@ -46,3 +46,14 @@ The score is about 0.78% +/- 0.07 which is not so bad
 <p align="justify">
 We redefine the count_words function by specifying an optional parameter which is the stop words list.
 Now the vocabulary is filtered, stop words are removed. We can see with cross validation that our score is quite stable around ~0.78
+
+## Use of Scikit Learn
+
+## Question 1
+<p align="justify">
+Using MultiNomialNB and pipeline from sklearn we get different results in our classification 
+</p>
+* with a char_wb analyser the score is quite bad, about *~0.61 +/- 0.15* accuracy on a 10-folds cross validation
+* with a word analyser the score is better : *~0.78 +/- 0.04*
+* with a bi-gram analyser the score stays the same but the standard deviation is higher : *0.08*
+
