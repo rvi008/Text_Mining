@@ -23,9 +23,8 @@ The negative/positive classification was done this way :
 * As it's difficult to capture half points grading (because there are many ways to specify it, for example : 1/2, 0.5, half) there are occasional losses but this isn't significant, a "neutral" review might be classified as negative which is reasonable. 
 
 ## Third question
-### Implementation of the NB class and it's Train / Predict functions
+### Implementation of the NB class and it's Fit / Predict functions
 <p align="justify">
-We choose to redeclare the count_words function into the NB class.
 The TrainMultinomialNB function was implemented this way : 
 </p>
 * Start with the collection of counts matrix from the training corpus using the count_word function
@@ -36,3 +35,14 @@ The TrainMultinomialNB function was implemented this way :
 The ApplyMultinomialNB was implemented this way :
 * Extract all the words from the test set and keep only those already in vocabulary
 * Predict the class for each document in the test set according to the prior distribution and the class associated to each term contained in the document 
+
+## Fourth question
+<p align="justify">
+In order to test the accuracy of our classifier, we use cross_val_score from Scikit-learn.
+The score is about 0.78% +/- 0.07 which is not so bad
+</p>
+
+## Fifth question
+<p align="justify">
+We redefine the count_words function by specifying an optional parameter which is the stop words list.
+Now the vocabulary is filtered, stop words are removed. We can see with cross validation that our score is quite stable around ~0.78
