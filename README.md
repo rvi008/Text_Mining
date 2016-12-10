@@ -46,7 +46,7 @@ The score is about 0.78% +/- 0.07 which is not so bad
 <p align="justify">
 We redefine the count_words function by specifying an optional parameter which is the stop words list.
 Now the vocabulary is filtered, stop words are removed. We can see with cross validation that our score is quite stable around ~0.78
-
+</p>
 ## Use of Scikit Learn
 
 ## Question 1
