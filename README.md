@@ -54,6 +54,16 @@ Now the vocabulary is filtered, stop words are removed. We can see with cross va
 Using MultiNomialNB and pipeline from sklearn we get different results in our classification 
 </p>
 * with a char_wb analyser the score is quite bad, about *~0.61 +/- 0.15* accuracy on a 10-folds cross validation
-* with a word analyser the score is better : *~0.78 +/- 0.04*
+* with a word analyser the score is better : *~0.77 +/- 0.04*
 * with a bi-gram analyser the score stays the same but the standard deviation is higher : *0.08*
 
+## Question 2
+We try two other classifiers to do  the NLP :
+* An SVM, still using a CountVectorizer. We get an accuracy of *~0.78 +/- 0.04* with 10-folds validation
+* A logistic regression still with a CountVectorizer. We get a slightly better result *~0.80 +/- 0.05*
+
+## Question 3
+We use NLTK to stemm the words and see if it improves the performances but with MultinomialNB, SVM and LogisticRegression, they stay the same
+
+## Question 4
+We add a PoS_tagger in the process which identify the type of word (Adjective, verbs, adverbs, Nouns) and filters all the other types of word. The results aren't improved
